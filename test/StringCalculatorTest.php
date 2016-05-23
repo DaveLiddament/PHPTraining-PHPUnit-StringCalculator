@@ -13,6 +13,7 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
             ["", 0],
             ["2", 2],
             ["2,3", 5],
+            ["2,-3,4", 6],
         ];
     }
 
