@@ -9,11 +9,12 @@ class StringCalculator
     /**
      * Returns the sum of all the numbers in the string (where the numbers are delimited by a comma).
      *
-     * @param $string
+     * @param string $string
+     * @param string $delimiter Optional delimiter (defaults to ,)
      * @return int
      * @throws \InvalidArgumentException if input is invalid (e.g. not a string)
      */
-    public function add($string)
+    public function add($string, $delimiter = ',')
     {
         if (!is_string($string)) {
             throw new \InvalidArgumentException("Invalid input [$string]");

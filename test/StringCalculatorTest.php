@@ -45,4 +45,12 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
         $calculator = new StringCalculator();
         $calculator->add("1,hello,3");
     }
+
+
+    public function testSemiColonDelimiter()
+    {
+        $calculator = new StringCalculator();
+        $actualValue = $calculator->add('5;6', ';');
+        $this->assertSame(11, $actualValue);
+    }
 }
