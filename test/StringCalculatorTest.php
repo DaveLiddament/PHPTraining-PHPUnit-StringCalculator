@@ -38,21 +38,22 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
     }
 
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
-    public function testNonStringSupplied()
+
+    public function invalidDataProvider()
     {
-        $this->calculator->add(4.3);
+        return [
+            [4.3],
+            ["1,hello,3"],
+        ];
     }
 
-
     /**
+     * @dataProvider invalidDataProvider
      * @expectedException \InvalidArgumentException
      */
-    public function testNonNumericItemSupplied()
+    public function testNonStringSupplied($invalidData)
     {
-        $this->calculator->add("1,hello,3");
+        $this->calculator->add($invalidData);
     }
 
 
