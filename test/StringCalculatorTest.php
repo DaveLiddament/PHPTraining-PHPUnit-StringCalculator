@@ -7,27 +7,23 @@ use Training\PHPUnit\StringCalculator\StringCalculator;
 
 class StringCalculatorTest extends \PHPUnit_Framework_TestCase
 {
-    public function testEmptyString()
+    public function happyPathDataProvider()
     {
-        $calculator = new StringCalculator();
-        $actualValue = $calculator->add("");
-        $this->assertSame(0, $actualValue);
+        return [
+            ["", 0],
+            ["2", 2],
+            ["2,3", 5],
+        ];
     }
 
-
-    public function testStringWith1Digit()
+    /**
+     * @dataProvider happyPathDataProvider
+     */
+    public function testHappyPath($input, $expected)
     {
         $calculator = new StringCalculator();
-        $actualValue = $calculator->add("2");
-        $this->assertSame(2, $actualValue);
-    }
-
-    
-    public function testStringWith2Digits()
-    {
-        $calculator = new StringCalculator();
-        $actualValue = $calculator->add("2,3");
-        $this->assertSame(5, $actualValue);
+        $actualValue = $calculator->add($input);
+        $this->assertSame($expected, $actualValue);
     }
 
 }
