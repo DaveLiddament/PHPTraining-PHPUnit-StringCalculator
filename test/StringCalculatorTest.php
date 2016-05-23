@@ -14,4 +14,11 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(0, $actualValue);
     }
 
+
+    public function testStringWith1Digit()
+    {
+        $calculator = new StringCalculator();
+        $actualValue = $calculator->add("2");
+        $this->assertSame(2, $actualValue);
+    }
 }
