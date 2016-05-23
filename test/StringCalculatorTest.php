@@ -21,4 +21,13 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
         $actualValue = $calculator->add("2");
         $this->assertSame(2, $actualValue);
     }
+
+    
+    public function testStringWith2Digits()
+    {
+        $calculator = new StringCalculator();
+        $actualValue = $calculator->add("2,3");
+        $this->assertSame(5, $actualValue);
+    }
+
 }
