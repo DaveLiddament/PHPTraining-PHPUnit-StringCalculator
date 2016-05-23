@@ -25,7 +25,7 @@ class StringCalculator
         }
 
         $result = 0;
-        foreach(explode(',', $string) as $number) {
+        foreach(explode($delimiter, $string) as $number) {
 
             if (!is_numeric($number)) {
                 throw new \InvalidArgumentException("Invalid number [$number] within input [$string].");
