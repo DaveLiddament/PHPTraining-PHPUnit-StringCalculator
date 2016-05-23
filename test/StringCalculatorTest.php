@@ -26,4 +26,13 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($expected, $actualValue);
     }
 
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testNonStringSupplied()
+    {
+        $calculator = new StringCalculator();
+        $calculator->add(4.3);
+    }
 }
