@@ -15,6 +15,10 @@ class StringCalculator
      */
     public function add($string)
     {
+        if (!is_string($string)) {
+            throw new \InvalidArgumentException("Invalid input [$string]");
+        }
+
         if (empty($string)) {
             return 0;
         }
