@@ -31,7 +31,9 @@ class StringCalculator
                 throw new \InvalidArgumentException("Invalid number [$number] within input [$string].");
             }
 
-            $result += (int) $number;
+            if ($number >= 0) {
+                $result += (int) $number;
+            }
         }
         return $result;
     }
