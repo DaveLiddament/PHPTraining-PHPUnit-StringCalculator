@@ -12,7 +12,11 @@ class StringCalculator
         if (empty($string)) {
             return 0;
         }
-        
-        return (int) $string;
+
+        $result = 0;
+        foreach(explode(',', $string) as $number) {
+            $result += (int) $number;
+        }
+        return $result;
     }
 }
