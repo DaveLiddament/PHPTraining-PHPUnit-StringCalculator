@@ -35,4 +35,14 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
         $calculator = new StringCalculator();
         $calculator->add(4.3);
     }
+
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testNonNumericItemSupplied()
+    {
+        $calculator = new StringCalculator();
+        $calculator->add("1,hello,3");
+    }
 }
